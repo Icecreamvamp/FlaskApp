@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+#footer {
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	background:#1A0917;
+} 
+
+#welcome {
+	border:2px;
+	border-color:#E75FA1;
+	background:#C8B7C4;
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:10px;
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
+	

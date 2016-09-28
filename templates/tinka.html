@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>Voorhetverhaal</title>
+<style>
+* { box-sizing: border-box; }
+.video-background {
+      background: #000;
+            position: fixed;
+                  top: 0; right: 0; bottom: 0; left: 0;
+                        z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+      position: absolute;
+            top: 0;
+                  left: 0;
+                        width: 100%;
+                              height: 100%;
+                                    pointer-events: none;
+}
+#vidtop-content {
+        top: 0;
+                color: #fff;
+}
+.vid-info { position: absolute; top: 0; right: 0; width: 33%; background: rgba(0,0,0,0.3); color: #fff; padding: 1rem; font-family: Avenir, Helvetica, sans-serif; }
+.vid-info h1 { font-size: 2rem; font-weight: 700; margin-top: 0; line-height: 1.2; }
+.vid-info a { display: block; color: #fff; text-decoration: none; background: rgba(0,0,0,0.5); transition: .6s background; border-bottom: none; margin: 1rem auto; text-align: center; }
+@media (min-aspect-ratio: 16/9) {
+      .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+      .video-foreground { width: 300%; left: -100%; }
+}
+@media all and (max-width: 600px) {
+    .vid-info { width: 50%; padding: .5rem; }
+    .vid-info h1 { margin-bottom: .2rem; }
+}
+@media all and (max-width: 500px) {
+    .vid-info .acronym { display: none; }
+}
+.inputFormStyle{
+     color:#5961cc;
+     background-color:#dfecc9;
+     border:dashed 1px black;
+     text-align:center;
+}
+.labelFormStyle{
+    color:#EDC5FC;
+}
+
+        </style>
+</head>
+<body>
+        <div class="video-background">
+            <div class="video-foreground">
+<!--
+ackgroundmusic in video: Dystopia by Per Kiilstofte https://machinimasound.com/music/dystopia/
+Licensed under Creative Commons Attribution 4.0 International (http://creativecommons.org/licenses/by/4.0/)
+-->
+
+              <iframe src="https://www.youtube.com/embed/_vJxHdUOj64?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=_vJxHdUOj64" frameborder="0" allowfullscreen></iframe>
+              </div>
+        </div>
+        <div class="container">
+            <div class="col-xs-12" style="text-align:center;color:white;">
+                <h1 class="display-1" style="font-size:5em;font-family:fantasy,Arial;">
+                <img src="/static/imgs/tinka_logo_boek_1.png" width="355" height="159" alt=""/> </h1>
+            </div>
+        </div>
+        <div class="container-fluid"> 
+            <div class="col-xs-6 col-xs-offset-3 col-lg-6" style="background-color:rgba(128,128,128,.5);text-align:center;">
+              
+                <form method="POST">
+                    <!--{{form.csrf_token}}-->
+                    {{form.naam.label(class="labelFormStyle")}}
+                    <br>
+                    {{form.naam(class="inputFormStyle")}}
+                    <br>
+                    {{form.email.label(class="labelFormStyle")}}
+                    <br>
+                    {{form.email(class="inputFormStyle")}}
+                    <br>
+                    {{form.straat.label(class="labelFormStyle")}}
+                    <br>
+                    {{form.straat(class="inputFormStyle")}}
+                    <br>
+                    {{form.postcode.label(class="labelFormStyle")}}
+                    <br>
+                    {{form.postcode(class="inputFormStyle")}}
+                    <br>
+                    {{form.telefoon.label(class="labelFormStyle")}}
+                    <br>
+                    {{form.telefoon(class="inputFormStyle")}}
+                    <br>
+                    {{form.code.label(class="labelFormStyle")}}
+                    <br>
+                    {{form.code(class="inputFormStyle")}}
+                    <br>
+                    {{form.submit() }}
+                </form>
+            </div>
+        </div>
+</body>
+

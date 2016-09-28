@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Voorhetverhaal</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <style>
+* { box-sizing: border-box; }
+.video-background {
+      background: #000;
+            position: fixed;
+                  top: 0; right: 0; bottom: 0; left: 0;
+                        z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+      position: absolute;
+            top: 0;
+                  left: 0;
+                        width: 100%;
+                              height: 100%;
+                                    pointer-events: none;
+}
+#vidtop-content {
+        top: 0;
+                color: #fff;
+}
+.vid-info { position: absolute; top: 0; right: 0; width: 33%; background: rgba(0,0,0,0.3); color: #fff; padding: 1rem; font-family: Avenir, Helvetica, sans-serif; }
+.vid-info h1 { font-size: 2rem; font-weight: 700; margin-top: 0; line-height: 1.2; }
+.vid-info a { display: block; color: #fff; text-decoration: none; background: rgba(0,0,0,0.5); transition: .6s background; border-bottom: none; margin: 1rem auto; text-align: center; }
+@media (min-aspect-ratio: 16/9) {
+      .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+      .video-foreground { width: 300%; left: -100%; }
+}
+@media all and (max-width: 600px) {
+    .vid-info { width: 50%; padding: .5rem; }
+    .vid-info h1 { margin-bottom: .2rem; }
+}
+@media all and (max-width: 500px) {
+    .vid-info .acronym { display: none; }
+}
+.inputFormStyle{
+     color:#5961cc;
+     background-color:#dfecc9;
+     border:dashed 1px black;
+     text-align:center;
+}
+.labelFormStyle{
+    color:#EDC5FC;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="video-background">
+            <div class="video-foreground">
+              <iframe src="https://www.youtube.com/embed/_vJxHdUOj64?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=_vJxHdUOj64" frameborder="0" allowfullscreen></iframe>
+              </div>
+        </div>
+        <div class="container">
+            <div class="col-xs-12" style="text-align:center;color:white;">
+                <h1 class="display-1" style="font-size:5em;font-family:fantasy,Arial;">
+                    Voorhetverhaal
+                </h1>
+            </div>
+        </div>
+        <div class="container"> 
+            <div class="col-xs-6 col-xs-offset-3" style="background-color:rgba(217,198,136,0.5);border:1px solid rgba(217,198,136,0.5);border-radius:3px;text-align:center;">
+                <form method="POST">
+                    <!--{{form.csrf_token}}-->
+                        {{form.naam.label(class="labelFormStyle")}}
+                        <br>
+                        {{form.naam(class="inputFormStyle")}}
+                        <br>
+                        {{form.email.label(class="labelFormStyle")}}
+                        <br>
+                        {{form.email(class="inputFormStyle")}}
+                        <br>
+                        {{form.straat.label(class="labelFormStyle")}}
+                        <br>
+                        {{form.straat(class="inputFormStyle")}}
+                        <br>
+                        {{form.postcode.label(class="labelFormStyle")}}
+                        <br>
+                        {{form.postcode(class="inputFormStyle")}}
+                        <br>
+                        {{form.telefoon.label(class="labelFormStyle")}}
+                        <br>
+                        {{form.telefoon(class="inputFormStyle")}}
+                        <br></br>
+                        {{form.submit() }}
+
+                </form>
+            </div>
+        </div>
+    </body>
